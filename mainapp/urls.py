@@ -7,5 +7,6 @@ urlpatterns = [
     path('main/', views.mainpage),
     path('news/', views.newslist),
     path('navigation/', views.navigation),
+    path('livechat/', views.livechat),
     path(r'news/<id2>/', views.seenews)
 ]

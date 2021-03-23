@@ -1,5 +1,6 @@
 from django.shortcuts import render,get_object_or_404 
-from .models import Post
+from .models import Post, message
+from .forms import MessageForm
 
 def mainpage(request):
     return render(request, 'mainpage.html')
@@ -15,3 +16,13 @@ def seenews(request, id2):
 
 def navigation(request):
     return render(request, 'navigation.html')
+
+def livechat(request):
+    error = ''
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = MessageForm()
+    return render(request, 'livechat.html',
+    {'mess':message.objects.all(), 'form':form})
