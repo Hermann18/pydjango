@@ -97,7 +97,7 @@ html,body{
 {% endfor %}
 </div>
 <div class = 'form'>
-    <form method="post">
+    <form method="post" action = '/mainapp/sendmes/'>
         {% csrf_token %}
         <p>{{form.author}}</p>
         <p>{{form.text}}</p>

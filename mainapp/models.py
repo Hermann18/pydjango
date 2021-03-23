@@ -18,5 +18,7 @@ class message(models.Model):
     author = models.CharField(max_length = 20) 
     date =  models.DateTimeField(auto_now_add = True, null=True, blank=True)
     text = models.TextField()
+    class meta: 
+        ordering = ['date']
     #chat = models.ForeignKey(livechat, verbose_name = "чат", on_delete = models.CASCADE)
     #модель чат не нужна на данный момент, можно удалять в будущем

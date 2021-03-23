@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404 
 from .models import Post, message
 from .forms import MessageForm
+from django.shortcuts import redirect
 
 def mainpage(request):
     return render(request, 'mainpage.html')
@@ -18,11 +19,13 @@ def navigation(request):
     return render(request, 'navigation.html')
 
 def livechat(request):
-    error = ''
+    form = MessageForm()
+    return render(request, 'livechat.html',
+    {'mess':reversed(message.objects.all()), 'form':form })
+
+def sendmessage(request):
     if request.method == 'POST':
         form = MessageForm(request.POST)
         if form.is_valid():
             form.save()
-    form = MessageForm()
-    return render(request, 'livechat.html',
-    {'mess':message.objects.all(), 'form':form})
+    return redirect('/mainapp/livechat/')
