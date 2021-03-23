@@ -38,14 +38,10 @@ html,body{
 }
 .text24{
  	text-overflow: ellipsis;
-	font-size: 3vh;
+ 	overflow: hidden;
+	font-size: 9px;
 	margin-left: 12%;
-    margin-bottom: 1%;
 	flex-grow: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 .text23{
 	font-size: 10px;
@@ -88,7 +84,7 @@ html,body{
 	    {%endif%}
 	    <div class = about>
 	    <p class = title><a href = 'http://127.0.0.1:8000/mainapp/news/{{post.id}}'>{{post.title}}</a></p>
-	    <p class = text24>{{post.text}}</p>
+	    <p class = text24>{{post.text}}...</p>
 	    <p class = text23>Created(in UTC): {{post.postdate}} </p>
 	    <p class = text23>Updated(in UTC): {{post.upddate}} </p>
 	    </div>
