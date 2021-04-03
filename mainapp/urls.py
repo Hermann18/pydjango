@@ -9,5 +9,6 @@ urlpatterns = [
     path('navigation/', views.navigation),
     path('livechat/', views.livechat),
     path('sendmes/', views.sendmessage),
-    path(r'news/<id2>/', views.seenews)
+    path(r'news/<id2>/', views.seenews),
+    path('register/', views.register)
 ]
