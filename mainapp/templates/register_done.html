@@ -1,0 +1,10 @@
+{% extends "basic/base.html" %}  
+{%block title%} Main Page {%endblock%}
+
+{%block css%} 
+{%endblock%}
+{% block content%}
+{{user}}
+<h1>Welcome {{ new_user.first_name }}!</h1>
+<p>Your account has been successfully created. </p>
+{%endblock%}

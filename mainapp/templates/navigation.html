@@ -1,0 +1,22 @@
+{% extends "basic/base.html" %}  
+{%block title%} Navigation Page {%endblock%}
+{%block css%} 
+li a{
+    font-size: 3vh;
+}
+{%endblock%}
+{% block content%}
+
+<ul>
+
+<li><a href = '/mainapp/main/'>Main Page</a></li>
+<li><a href = '/mainapp/news/'>News List</a></li>
+<li><a href = ''>Navigation Page</a></li>
+<li><a href = '/mainapp/livechat/'>Live Chat</a></li>
+<li><a href = '/mainapp/register/'>Regestration</a></li>
+<li><a>Log In</a></li>
+<li><a>Log Out</a></li>
+
+</ul>
+
+{%endblock%}

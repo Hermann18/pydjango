@@ -1,0 +1,21 @@
+{% extends "basic/base.html" %}  
+{%block title%} Main Page {%endblock%}
+
+{%block css%} 
+.top{
+    font-size: 10vh;
+    clear: both;
+}
+{%endblock%}
+
+{% block content%}
+<p class = 'top'>Create an account</p>
+<div>
+    <form action="." method="post">
+        {% csrf_token %}
+        <p>{{ user_form.username }}</p>
+        <p>{{ user_form.as_table}}</p>
+        <p><input type="submit" value="Create new account"></p>
+    </form>
+</div>
+{%endblock%}
