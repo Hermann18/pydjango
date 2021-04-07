@@ -1,14 +1,29 @@
 {% extends "basic/base.html" %}  
-{%block title%} Main Page {%endblock%}
+{%block title%} Registration {%endblock%}
 
 {%block css%} 
+.top{
+    font-size: 8vh;
+    margin-bottom: 2vh;
+    padding: 0;
+}
+
+.content{
+    flex-direction: column;
+    align-items: center;
+}
+
 {%endblock%}
-<h1>Create an account</h1>
-<p>Please, sign up using the following form:</p>
-<form action="." method="post">
-    {{ user_form.as_p }}
-    {% csrf_token %}
-    <p><input type="submit" value="Create my account"></p>
-</form>
+
 {% block content%}
+{% if user.is_authenticated %}
+<p>You're already logged in</p>
+{% else %}
+<p class = 'top'>Create an account</p>
+    <form action="." method="post" class = 'fok'>
+        {% csrf_token %}
+        {{user_form.as_p}}
+        <p><input type="submit" value="Create new account"></p>
+    </form>
+{% endif %}
 {%endblock%}

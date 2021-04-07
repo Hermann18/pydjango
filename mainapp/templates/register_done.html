@@ -1,10 +1,19 @@
 {% extends "basic/base.html" %}  
-{%block title%} Main Page {%endblock%}
+{%block title%} Success {%endblock%}
 
 {%block css%} 
+.content{
+    flex-direction: column;
+    align-items: center;
+}
 {%endblock%}
-{{user}}
-<h1>Welcome {{ new_user.first_name }}!</h1>
-<p>Your account has been successfully created. Now you can <a href="{% url "login" %}">log in</a>.</p>
+
 {% block content%}
+{% if user.is_authenticated %}
+<h1>Welcome to the club, {{ user.username }}!</h1>
+<p>*hit ur ass*</p>
+{%else%}
+<h1>Sorry for what?</h1>
+<p>*hit ur ass*</p>
+{%endif%}
 {%endblock%}

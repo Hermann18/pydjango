@@ -1,0 +1,20 @@
+{% extends "basic/base.html" %}  
+{%block title%} Logout Page {%endblock%}
+
+{%block css%} 
+.content{
+    flex-direction: column;
+    align-items: center;
+}
+{%endblock%}
+
+{% block content%}
+{% if user.is_authenticated %}
+<form action="." method="post" class = 'fok'>
+    {% csrf_token %}
+    <p><input type="submit" value="Log Out"></p>
+</form>
+{%else%}
+<p>You're out already</p>
+{%endif%}
+{%endblock%}
